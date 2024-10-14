@@ -17,16 +17,17 @@ generation_prompt = ChatPromptTemplate.from_messages([
 
 llm = get_client()
 
-generation_chain =  generation_prompt | llm | StrOutputParser()
-
-tweet = ''
 request = HumanMessage(
-    content="El Kef, Tunisia"
-)
-for chunk in generation_chain.stream(
-    {
-        'messages': [request]
-    }
-):
-    print(chunk, end="")
-    tweet += chunk
+        content="El Kef, Tunisia"
+    )
+
+generation_chain =  generation_prompt | llm | StrOutputParser()
+if __name__ == '__main__':
+    tweet = ''
+    for chunk in generation_chain.stream(
+        {
+            'messages': [request]
+        }
+    ):
+        print(chunk, end="")
+        tweet += chunk
