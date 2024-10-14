@@ -46,5 +46,4 @@ message = HumanMessage(
 
 if __name__ == '__main__':
     response = graph.invoke(message)
-    for res in response:
-        print(res)
+    print(len(response))
