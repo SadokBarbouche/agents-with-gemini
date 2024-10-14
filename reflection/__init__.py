@@ -2,4 +2,4 @@
 # Montitoring, evaluation, adapting
 # Montior , continuously observe actions and outcomes
 # Evaluate , assess the effectiveness of actions
-# Adapt , modify strategies based on evaluations to improve future performance 
+# Adapt , modify strategies based on evaluations to improve future performance

@@ -1,3 +1,3 @@
 from .graph import graph
-
-__all__ = ["graph"]
+from .tavily import client as tavily_client
+__all__ = ["graph", "tavily_client"]
