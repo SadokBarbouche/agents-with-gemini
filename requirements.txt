@@ -1,0 +1,7 @@
+langchain_core==0.3.10
+langchain_google_genai==2.0.1
+langgraph==0.2.37
+langsmith==0.1.135
+protobuf==3.20.3
+pydantic==1.10.12
+python-dotenv==1.0.1
