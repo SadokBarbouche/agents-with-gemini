@@ -10,8 +10,6 @@ from .nodes import (
 from langgraph.graph import END
 from .classes import AgentState
 from langgraph.checkpoint.sqlite import SqliteSaver
-from langchain_core.runnables.base import ensure_config
-
 
 graph = StateGraph(AgentState)
 

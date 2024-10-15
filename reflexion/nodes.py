@@ -24,6 +24,7 @@ tavily_client = TavilyClient(
     api_key=os.environ.get("TAVILY_API_KEY"),
 )
 
+
 def plan_node(state: AgentState):
     messages = [SystemMessage(PLAN_PROMPT), HumanMessage(content=state["task"])]
     response = model.invoke(messages)
@@ -37,6 +38,9 @@ def research_plan_node(state: AgentState):
             HumanMessage(content=state["task"]),
         ]
     )
+    print("##" * 100)
+    print(queries)
+    print("##" * 100)
     content = []
     if 'content' in state:
         content = state["content"]
@@ -58,7 +62,7 @@ def generation_node(state: AgentState):
         user_message,
     ]
     response = model.invoke(messages)
-    return {"draft": response, "revision_number": state.get("revision_number", 1) + 1}
+    return {"draft": response.content, "revision_number": state.get("revision_number", 1) + 1}
 
 
 def reflection_node(state: AgentState):
@@ -80,10 +84,11 @@ def critique_node(state: AgentState):
     content = []
     if 'content' in state:
         content = state["content"]
-    for q in queries:
-        response = tavily_client.search(query=q, max_results=2)
-        for r in response["results"]:
-            content.append(r["content"])
+    if queries:
+        for q in queries:
+            response = tavily_client.search(query=q, max_results=2)
+            for r in response["results"]:
+                content.append(r["content"])
     return {"content": content}
 
 

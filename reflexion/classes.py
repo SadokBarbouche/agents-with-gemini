@@ -1,6 +1,5 @@
-from typing import TypedDict
-from langchain_core.pydantic_v1 import BaseModel
-from typing import List
+from typing import TypedDict, List
+from pydantic import BaseModel
 
 class AgentState(TypedDict):
     task : str
