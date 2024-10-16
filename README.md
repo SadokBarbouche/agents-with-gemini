@@ -10,16 +10,25 @@ The project consists of several modules, each representing a key aspect of the s
    ```
    _start_ -> chatbot -> _end_
    ```
+<div style="display: flex; justify-content: center;">
+    <img src="assets/graph_image.png" alt="plot">
+</div>
 
 2. **Reflection and Generation**
    ```
    _start_ -> generate <-> reflect -> _end_
    ```
+<div style="display: flex; justify-content: center;">
+    <img src="assets/reflection_graph.png" alt="plot">
+</div>
 
 3. **Research Planning and Critique**
    ```
    _start_ -> planner -> research_plan -> generate <-> reflect -> research_critique -> _end_
    ```
+<div style="display: flex; justify-content: center;">
+    <img src="assets/reflexion_graph.png" alt="plot">
+</div>
 
 ## Directory Structure
 
